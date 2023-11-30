@@ -1,10 +1,6 @@
-/*
-Ideas of the project:
-- 5 rooms for 5 subject
-- Set a difficulty to each predefined question
-
-
-
-
-
-*/
+<<<<<<< HEAD
+// Project, push testtttttt
+=======
+hello there!
+Discard these changes!
+>>>>>>> 92c312ef293226a753815eaf344b9a29fe394955
