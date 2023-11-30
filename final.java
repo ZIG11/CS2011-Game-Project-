@@ -1,3 +1,10 @@
-hello there!
-Discard these changes!
-These are more changes
+/*
+Ideas of the project:
+- 5 rooms for 5 subject
+- Set a difficulty to each predefined question
+
+
+
+
+
+*/
