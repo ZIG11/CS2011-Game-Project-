@@ -16,7 +16,7 @@ public class TestGame{
     String[] englishQ ={"What is the symbol called that is used to end a statement?","What is the first paragraph of your essay known as?","Copying someone else's work and making it your own is known as?","True or False: A paragraph can be as many sentences as you want it to be.","What is the symbol we use to end a question?","What are terms with the same pronunciation but different spelling and meaning called?","What is a rhetorical device used to compare two things using the words 'like' and 'as'?","In order to convey excitement and exclamation with a statement, we use what symbol?","The statement 'The food tasted awfully good' is an example of what figure of speech?"};
     String[] englishA ={"Period","Introduction","Plagiarism","True","?","Homophones","Simile","!","Oxymoron"};
 
-    String[] scienceQ = {"True or False Males have 2 X chromosomes.","True or False An octopus has the ability to camoflauge.","What are 8 legged arachnids called?","What is the the process by which plants use sunlight, water, and carbon dioxide to create oxygen and energy in the form of sugar?","What is the powerhouse of a cell?","Who is the creator of the atomic bomb?","Who created the law of gravity?","What is the center of the earth known as?","What does Au on the periodic table represent?","Are homosapieans mammals or reptiles?","What is the theory which the entire space, universe and evrything that exist today was creat by a giant explosion?"};
+    String[] scienceQ = {"True or False Males have 2 X chromosomes.","True or False An octopus has the ability to camoflauge.","What are 8 legged arachnids called?","What is the the process by which plants use sunlight, water, and carbon dioxide to create oxygen and energy in the form of sugar?","What is the powerhouse of a cell?","Who is the creator of the atomic bomb?","Who created the law of gravity?","What is the center of the earth known as?","What does Au on the periodic table represent?","Are homosapieans mammals or reptiles?","What is the theory which the entire space, universe and everything that exist today was created by a giant explosion?"};
     String[] scienceA = {"False","True","Spiders","Photosynthesis","Mitochondria","J. Robert Oppenheimer","Isaac Newton","Core","Gold","Mammals","Big bang theory"};
 
     String[] historyQ = {"Who was the first president of the United States?","Who was the fifth president of the United States?","What is the mass genocide of 6 million Jewish people known as?","True or False World War 2 ended in 1945?","How many wives did King Henry the 8th have?","Who is the first-ever person to land on the Moon?","Who was able to wield lightning by tying a key to a kite?","Who created the light bulb?","What is the name of the prominent leader in the civil rights movement that created the 'I have a dream' speech?","True or False Cesar Chavez was not a labor leader and civil rights activist César that brought about better conditions for agricultural workers."};
@@ -30,27 +30,43 @@ public class TestGame{
     int mathScore = askQuestions(mathQ, mathA, numberOfQuestions);
     double mathPercentage = calculatePercentageScore(mathScore, numberOfQuestions, "math");
     System.out.println("You have scored a total of "+mathPercentage+"% in math");
+    int mathCredits=4;
     System.out.println();
 
     int englishScore = askQuestions(englishQ, englishA, numberOfQuestions);
     double englishPercentage = calculatePercentageScore(englishScore, numberOfQuestions, "english");
     System.out.println("You have scored a total of "+englishPercentage+"% in english");
+    int englishCredits=4;
     System.out.println();
 
     int scienceScore = askQuestions(scienceQ, scienceA, numberOfQuestions);
     double sciencePercentage = calculatePercentageScore(scienceScore, numberOfQuestions, "science");
     System.out.println("You have scored a total of "+sciencePercentage+"% in science");
+    int scienceCredits=4;
     System.out.println();
 
     int historyScore = askQuestions(historyQ, historyA, numberOfQuestions);
     double historyPercentage = calculatePercentageScore(historyScore, numberOfQuestions, "history");
     System.out.println("You have scored a total of "+historyPercentage+"% in history");
+    int historyCredits=4;
     System.out.println();
 
     int peScore = askQuestions(peQ, peA, numberOfQuestions);
     double pePercentage = calculatePercentageScore(peScore, numberOfQuestions, "PE");
     System.out.println("You have scored a total of "+pePercentage+"% in PE");
+    int peCredits=4;
     System.out.println();
+
+    // receieve the total gpa with all scores and credits added up together
+    double gpa=calculateGPA(mathScore, mathCredits, englishScore, englishCredits, scienceScore, scienceCredits, historyScore, historyCredits, peScore, peCredits);
+    //If GPA is not enough you die
+    System.out.println("Your overall GPA is: "+gpa);
+    if(gpa<2.5){
+      System.out.println("You Died");
+    } else{
+      System.out.println("YOU WON AND GOT YOURSELF A DIPLOMA!!!!");
+    }
+    System.out.println("Game Over");
   }
 
   // Creating a method soley to incorpate and ask questions and allow user to answer questions.
@@ -63,9 +79,10 @@ public class TestGame{
       int randomIndexNum=(int)(Math.random()*questions.length);
       System.out.print(questions[randomIndexNum]+" ");
       String usersAnswer=input.nextLine();
+      Sting lowerAnsers=usersAnswer.toLowercase();
 
       //answers have the same exact number as questions so each answer is correlated to the right question
-      if (usersAnswer.equals(answers[randomIndexNum])) {
+      if (lowerAnswer.equals(answers[randomIndexNum])) {
         System.out.println("You are correct");
         score++;
       } else{
@@ -78,5 +95,24 @@ public class TestGame{
   //Creating another method specificaly to caculate each score from each different subject
   static double calculatePercentageScore(int score, int totalQuestions, String subject){
     return (score/(double)totalQuestions)*100;
+  }
+  static double calculateGPA(int mathScore,int mathCredits, int englishScore, int englishCredits, int scienceScore, int scienceCredits, int historyScore, int historyCredits, int peScore, int peCredits){
+    int totalScore=mathScore+englishScore+scienceScore+historyScore+peScore;
+    int totalCredits=mathCredits+englishCredits+scienceCredits+historyCredits+peCredits;
+
+    double overallPercentage=(totalScore/(double)totalCredits)*100;
+
+    if (overallPercentage>=90){
+      return 4.0;
+    } else if(overallPercentage>=80){
+      return 3.0;
+    } else if(overallPercentage>=60){
+      return 2.0;
+    } else if(overallPercentage>=40){
+      return 1.0;
+    } else{
+      return 0.0;
+    }
+
   }
 }
