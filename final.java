@@ -6,7 +6,7 @@ Discard these changes!
 >>>>>>> 92c312ef293226a753815eaf344b9a29fe394955
 
 import java.util.Scanner;
-public class TestGame{
+public class Test2{
   public static void main(String[] args){
     Scanner input=new Scanner(System.in);
     //Each and every sperate array for questions and answers. And seperated through Subjects.
@@ -79,10 +79,9 @@ public class TestGame{
       int randomIndexNum=(int)(Math.random()*questions.length);
       System.out.print(questions[randomIndexNum]+" ");
       String usersAnswer=input.nextLine();
-      String lowerAnswer=usersAnswer.toLowerase();
 
       //answers have the same exact number as questions so each answer is correlated to the right question
-      if (lowerAnswer.equals(answers[randomIndexNum])) {
+      if (usersAnswer.equals(answers[randomIndexNum])) {
         System.out.println("You are correct");
         score++;
       } else{
