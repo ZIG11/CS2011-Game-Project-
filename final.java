@@ -79,7 +79,7 @@ public class TestGame{
       int randomIndexNum=(int)(Math.random()*questions.length);
       System.out.print(questions[randomIndexNum]+" ");
       String usersAnswer=input.nextLine();
-      Sting lowerAnsers=usersAnswer.toLowercase();
+      Sting lowerAnswer=usersAnswer.toLowercase();
 
       //answers have the same exact number as questions so each answer is correlated to the right question
       if (lowerAnswer.equals(answers[randomIndexNum])) {
