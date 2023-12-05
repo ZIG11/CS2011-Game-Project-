@@ -18,6 +18,9 @@ public class final{
     String[] peQ = {"How many calories make a pound?","How many calories can you burn running 1 mile?","True or False: Vegetables are a part of the food pyramid.","True or False: Fruits and vegetables are unhealthy for you.","Is cheese a part of dairy or grains in the food pyramid?","How many cups of water are recommended to drink a day?","An apple a day keeps the ___ away?","True or False: Cheeseburgers are really good for your health.","How many players in total are present in a basketball game?","How many strikes do you need to strikeout in baseball?"};
     String[] peA = {"3500","100","True","False","Dairy","8","Doctor","False","10","3"};
 
+    String[] electiveQ = {"What number does indexing start on?","A set of instructions that are associated with an object","True or False: A code editor is a form of programming language.","A set of instructions or procedures to perform a specific task.","Any element of a computer that's physical.","People call it the brain of the computer","A collection of items stored at memory locations","A procedure or formula used for solving a problem.","What programming language was this made in?","A value that can change depending on the conditions & information in the program"};
+    String[] electiveA = {"0","method","False","function","hardware","CPU","array","algorithm","java","variable"};
+
     // Questions For each question will pop up and a score in Precentages will be issuedin the end of each subject quiz
     int numberOfQuestions=5;
     int mathScore = askQuestions(mathQ, mathA, numberOfQuestions);
@@ -50,8 +53,14 @@ public class final{
     int peCredits=4;
     System.out.println();
 
+    int electiveScore = askQuestions(electiveQ, electiveA, numberOfQuestions);
+    double electivePercentage = calculatePercentageScore(electiveScore, numberOfQuestions, "elective");
+    System.out.println("You have scored a total of "+electivePercentage+"% in elective");
+    int electiveCredits=4;
+    System.out.println();
+
     // receieve the total gpa with all scores and credits added up together
-    double gpa=calculateGPA(mathScore, mathCredits, englishScore, englishCredits, scienceScore, scienceCredits, historyScore, historyCredits, peScore, peCredits);
+    double gpa=calculateGPA(mathScore, mathCredits, englishScore, englishCredits, scienceScore, scienceCredits, historyScore, historyCredits, peScore, peCredits, electiveScore, electiveCredits);
     //If GPA is not enough you die
     System.out.println("Your overall GPA is: "+gpa);
     if(gpa<2.5){
