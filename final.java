@@ -97,9 +97,9 @@ public class final{
   static double calculatePercentageScore(int score, int totalQuestions, String subject){
     return (score/(double)totalQuestions)*100;
   }
-  static double calculateGPA(int mathScore,int mathCredits, int englishScore, int englishCredits, int scienceScore, int scienceCredits, int historyScore, int historyCredits, int peScore, int peCredits){
-    int totalScore=mathScore+englishScore+scienceScore+historyScore+peScore;
-    int totalCredits=mathCredits+englishCredits+scienceCredits+historyCredits+peCredits;
+  static double calculateGPA(int mathScore,int mathCredits, int englishScore, int englishCredits, int scienceScore, int scienceCredits, int historyScore, int historyCredits, int peScore, int peCredits, int electiveScore, int electiveCredits){
+    int totalScore=mathScore+englishScore+scienceScore+historyScore+peScore+electiveScore;
+    int totalCredits=mathCredits+englishCredits+scienceCredits+historyCredits+peCredits+electiveCredits;
 
     double overallPercentage=(totalScore/(double)totalCredits)*100;
 
