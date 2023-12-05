@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-// Project, push testtttttt
-=======
-hello there!
-Discard these changes!
->>>>>>> 92c312ef293226a753815eaf344b9a29fe394955
-
 import java.util.Scanner;
-public class Test2{
+public class final{
   public static void main(String[] args){
     Scanner input=new Scanner(System.in);
     //Each and every sperate array for questions and answers. And seperated through Subjects.
