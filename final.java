@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class final{
+public class Test2{
   public static void main(String[] args){
     Scanner input=new Scanner(System.in);
     //Each and every sperate array for questions and answers. And seperated through Subjects.
@@ -23,52 +23,64 @@ public class final{
 
     // Questions For each question will pop up and a score in Precentages will be issuedin the end of each subject quiz
     int numberOfQuestions=5;
+    int totalClasses=6;
+
+    System.out.println("Math:");
     int mathScore = askQuestions(mathQ, mathA, numberOfQuestions);
     double mathPercentage = calculatePercentageScore(mathScore, numberOfQuestions, "math");
     System.out.println("You have scored a total of "+mathPercentage+"% in math");
-    int mathCredits=4;
     System.out.println();
 
+    System.out.println("Engllish:");
     int englishScore = askQuestions(englishQ, englishA, numberOfQuestions);
     double englishPercentage = calculatePercentageScore(englishScore, numberOfQuestions, "english");
     System.out.println("You have scored a total of "+englishPercentage+"% in english");
-    int englishCredits=4;
     System.out.println();
 
+    System.out.println("Science:");
     int scienceScore = askQuestions(scienceQ, scienceA, numberOfQuestions);
     double sciencePercentage = calculatePercentageScore(scienceScore, numberOfQuestions, "science");
     System.out.println("You have scored a total of "+sciencePercentage+"% in science");
-    int scienceCredits=4;
     System.out.println();
 
+    System.out.println("History:");
     int historyScore = askQuestions(historyQ, historyA, numberOfQuestions);
     double historyPercentage = calculatePercentageScore(historyScore, numberOfQuestions, "history");
     System.out.println("You have scored a total of "+historyPercentage+"% in history");
-    int historyCredits=4;
     System.out.println();
 
+    System.out.println("PE:");
     int peScore = askQuestions(peQ, peA, numberOfQuestions);
     double pePercentage = calculatePercentageScore(peScore, numberOfQuestions, "PE");
     System.out.println("You have scored a total of "+pePercentage+"% in PE");
-    int peCredits=4;
     System.out.println();
 
+    System.out.println("Programming:");
     int electiveScore = askQuestions(electiveQ, electiveA, numberOfQuestions);
-    double electivePercentage = calculatePercentageScore(electiveScore, numberOfQuestions, "elective");
-    System.out.println("You have scored a total of "+electivePercentage+"% in elective");
-    int electiveCredits=4;
+    double electivePercentage = calculatePercentageScore(electiveScore, numberOfQuestions, "Programming");
+    System.out.println("You have scored a total of "+electivePercentage+"% in Programming");
     System.out.println();
 
     // receieve the total gpa with all scores and credits added up together
-    double gpa=calculateGPA(mathScore, mathCredits, englishScore, englishCredits, scienceScore, scienceCredits, historyScore, historyCredits, peScore, peCredits, electiveScore, electiveCredits);
+    //Completely changed the GPA system cause my method wasnt working correctly
+    double mathgpa=calculateGPA(mathScore, numberOfQuestions, "math");
+    double englishgpa=calculateGPA(englishScore, numberOfQuestions, "english");
+    double historygpa=calculateGPA(historyScore, numberOfQuestions, "history");
+    double sciencegpa=calculateGPA(scienceScore, numberOfQuestions, "science");
+    double pegpa=calculateGPA(peScore, numberOfQuestions, "PE");
+    double electivegpa=calculateGPA(electiveScore, numberOfQuestions, "Elective");
+
+    double sumGPA=mathgpa+englishgpa+historygpa+sciencegpa+pegpa+electivegpa;
+    double gpa=sumGPA/(double)totalClasses;
+
     //If GPA is not enough you die
     System.out.println("Your overall GPA is: "+gpa);
     if(gpa<2.5){
       System.out.println("You Died");
-    } else{
+      } else{
       System.out.println("YOU WON AND GOT YOURSELF A DIPLOMA!!!!");
-    }
-    System.out.println("Game Over");
+      }
+      System.out.println("Game Over");
   }
 
   // Creating a method soley to incorpate and ask questions and allow user to answer questions.
@@ -81,6 +93,7 @@ public class final{
       int randomIndexNum=(int)(Math.random()*questions.length);
       System.out.print(questions[randomIndexNum]+" ");
       String usersAnswer=input.nextLine();
+
 
       //answers have the same exact number as questions so each answer is correlated to the right question
       if (usersAnswer.equals(answers[randomIndexNum])) {
@@ -97,11 +110,9 @@ public class final{
   static double calculatePercentageScore(int score, int totalQuestions, String subject){
     return (score/(double)totalQuestions)*100;
   }
-  static double calculateGPA(int mathScore,int mathCredits, int englishScore, int englishCredits, int scienceScore, int scienceCredits, int historyScore, int historyCredits, int peScore, int peCredits, int electiveScore, int electiveCredits){
-    int totalScore=mathScore+englishScore+scienceScore+historyScore+peScore+electiveScore;
-    int totalCredits=mathCredits+englishCredits+scienceCredits+historyCredits+peCredits+electiveCredits;
-
-    double overallPercentage=(totalScore/(double)totalCredits)*100;
+  //To gather the total GPA we want to recieve the score after each Test. We convert the test scores into credit and divde the credits by the number of subjects
+  static double calculateGPA(int score, int totalQuestions, String subject){
+    double overallPercentage=(score/(double)totalQuestions)*100;
 
     if (overallPercentage>=90){
       return 4.0;
@@ -114,6 +125,5 @@ public class final{
     } else{
       return 0.0;
     }
-
   }
 }
