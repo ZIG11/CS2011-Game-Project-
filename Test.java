@@ -1,3 +1,6 @@
+//UPDATED VERSION OF THE MAP
+//WILL UPDATE COMMENTS, AS SOME ARE RANDOM
+//Sorry if some variable names are weird lol, made it at 4 am 
 import java.util.Scanner;
 import java.util.Scanner;
 import java.lang.Math;
