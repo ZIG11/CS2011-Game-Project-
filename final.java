@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Test2{
+public class final{
   public static void main(String[] args){
     Scanner input=new Scanner(System.in);
     //Each and every sperate array for questions and answers. And seperated through Subjects.
