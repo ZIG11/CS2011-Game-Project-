@@ -1,5 +1,24 @@
 import java.util.Scanner;
 public class final{
+  static final String ANSI_CLEAR="\u001B[2J";
+  static final String ANSI_REPOSITION="\u001B[H";
+  static final String ANSI_RESET="\u001B[0m";
+  static final String ANSI_BLACK="\u001B[30m";
+  static final String ANSI_BLACK_BKGRND="\u001B[40m";
+  static final String ANSI_RED="\u001B[31m";
+  static final String ANSI_RED_BKGRND="\u001B[41m";
+  static final String ANSI_GREEN="\u001B[32m";
+  static final String ANSI_GREEN_BKGRND="\u001B[42m";
+  static final String ANSI_YELLOW="\u001B[33m";
+  static final String ANSI_YELLOW_BKGRND="\u001B[43m";
+  static final String ANSI_BLUE="\u001B[34m";
+  static final String ANSI_BLUE_BKGRND="\u001B[44m";
+  static final String ANSI_PURPLE="\u001B[35m";
+  static final String ANSI_PURPLE_BKGRND="\u001B[45m";
+  static final String ANSI_CYAN="\u001B[36m";
+  static final String ANSI_CYAN_BKGRND="\u001B[46m";
+  static final String ANSI_WHITE="\u001B[37m";
+  static final String ANSI_WHITE_BKGRND="\u001B[47m";
   public static void main(String[] args){
     Scanner input=new Scanner(System.in);
     //Each and every sperate array for questions and answers. And seperated through Subjects.
@@ -21,46 +40,89 @@ public class final{
     String[] electiveQ = {"What number does indexing start on?","A set of instructions that are associated with an object","True or False: A code editor is a form of programming language.","A set of instructions or procedures to perform a specific task.","Any element of a computer that's physical.","People call it the brain of the computer","A collection of items stored at memory locations","A procedure or formula used for solving a problem.","What programming language was this made in?","A value that can change depending on the conditions & information in the program"};
     String[] electiveA = {"0","method","False","function","hardware","CPU","array","algorithm","java","variable"};
 
+    System.out.println("Would you like to play game:");
+    System.out.println("Press[1] to play");
+    System.out.println("Press[2] to view instructions");
+    System.out.println("Press[3] to quit");
+    int myInt=input.nextInt();
+
+     if(myInt==1){
     // Questions For each question will pop up and a score in Precentages will be issuedin the end of each subject quiz
     int numberOfQuestions=5;
     int totalClasses=6;
 
-    System.out.println("Math:");
+    System.out.print(ANSI_CLEAR+ANSI_REPOSITION);
+
+    System.out.println("Hello, welcome to THE SCHOOL. Yes, I said it, THEEEE Schooool, like Shakespeare, you know. Anyways, it seems you're new around here. Let me introduce you to the basics. You'll be going around classes and answering some seriously intense questions. I hope you read the instruction menu because that's all the help you're gonna get. Well, back to what I'm saying. You can graduate from this school in a day. Yes, you heard me, a DAY. Just make sure to pass each class by answering all the teachers' questions correctly. And don't be afraid to get any answers wrong. As long as you pass a class with a GPA of 2.5 or above, you are free from this wild learning experience forever. Obviously, if you decide to play again, you're back to this living hellhole. But have fun. Make it fun. You'll be starting with six different courses. First up is MATH, ooooh, Numbers... NEXT is ENGLISH... snoozefest in my opinion... SCIENCE, I LOVE SCIENCE... HISTORY, oh yeah, that's the good stuff... PE, GET YOUR HEALTH ON... AND FINALLY, LAST BUT NOT LEAST, PROGRAMMING. You're gonna have so much fun with these bosses. Wait, I mean teachers. Totally not evil teachers that might kill you if you get under a 2.5. Anyways, get going. SEE YA!");
+
+    System.out.println();
+
+    System.out.println("Welcome to Math. I have you answer all my questions.\n"+"HAAAVE FUUUUN. BWA HA HA HA... Prepare yourself for the mind-bending world of numbers!\n"+"I'm your crazy math teacher, and I'm OBSESSED with math! If you need help, just ask—although..JUST KIDDING IDIOT I'M EVIL.\n"+"Imma enjoy seeing you squirm and cry trying to solve my questions. Now, let the mathematical madness begin! Mwahahaha...");
+    System.out.println();
     int mathScore = askQuestions(mathQ, mathA, numberOfQuestions);
     double mathPercentage = calculatePercentageScore(mathScore, numberOfQuestions, "math");
     System.out.println("You have scored a total of "+mathPercentage+"% in math");
     System.out.println();
 
-    System.out.println("Engllish:");
+    System.out.println("Press Enter to continue:");
+    String random2=input.nextLine();
+
+    System.out.print(ANSI_CLEAR+ANSI_REPOSITION);
+
+    System.out.println("YAAWWWWN. Oh, welcome to English, where everything is English and nothing but English.\n"+"Hurry up and get on with the questions. I'm a tired, lazy teacher who just wants to leave and get this over with.\n"+"Let's make it quick, shall we? I hate my life.");
+    System.out.println();
     int englishScore = askQuestions(englishQ, englishA, numberOfQuestions);
     double englishPercentage = calculatePercentageScore(englishScore, numberOfQuestions, "english");
     System.out.println("You have scored a total of "+englishPercentage+"% in english");
     System.out.println();
 
-    System.out.println("Science:");
+    System.out.println("Press Enter to continue:");
+    String random3=input.nextLine();
+
+    System.out.print(ANSI_CLEAR+ANSI_REPOSITION);
+
+    System.out.println("WELCOME TO SCIENCE. OOOH, WE GET TO DO ALL SORTS OF COOL EXPERIMENTS ABOUT THE HUMAN BODY AND THEIR ORGANS AND BLOOD... SO MUCH BLOOD...\n"+"cough... Oh, sorry, off track. HA HA. Get ready for some thrilling experiments! Science is about to get wild! \n"+"But today we'll focus on those questions first.");
+    System.out.println();
     int scienceScore = askQuestions(scienceQ, scienceA, numberOfQuestions);
     double sciencePercentage = calculatePercentageScore(scienceScore, numberOfQuestions, "science");
     System.out.println("You have scored a total of "+sciencePercentage+"% in science");
     System.out.println();
 
-    System.out.println("History:");
+    System.out.println("Press Enter to continue:");
+    String enter4=input.nextLine();
+
+    System.out.print(ANSI_CLEAR+ANSI_REPOSITION);
+    System.out.println("OOOOH, WELCOME WORTHY TRAVELER! \n"+"Partake in my history test, and trust me, you will have a blast! Now, let's journey through the annals of time.\n"+"Ah, don't forget to add the word 'Wives' to the Henry the 8th question if you get there, okay?\n"+"Prepare yourself for a delightful adventure through the pages of history. Shall we commence our quest?");
+    System.out.println();
     int historyScore = askQuestions(historyQ, historyA, numberOfQuestions);
     double historyPercentage = calculatePercentageScore(historyScore, numberOfQuestions, "history");
     System.out.println("You have scored a total of "+historyPercentage+"% in history");
     System.out.println();
 
-    System.out.println("PE:");
+    System.out.println("Press Enter to continue:");
+    String enter5=input.nextLine();
+
+    System.out.print(ANSI_CLEAR+ANSI_REPOSITION);
+
+    System.out.println("HUT 2 3 4, HUT 2 3 4! WELCOME TO PE, kid!\n"+"We're gonna put you through tough training to get you prepped for this intense class.\n"+"NOW GET DOWN AND GIVE ME 5, MAGGOT! You think you can handle the rigorous training of physical education? We'll see about that.\n"+"Now, DROP AND GIVE ME THOSE PUSH-UPS");
+    System.out.println();
     int peScore = askQuestions(peQ, peA, numberOfQuestions);
     double pePercentage = calculatePercentageScore(peScore, numberOfQuestions, "PE");
     System.out.println("You have scored a total of "+pePercentage+"% in PE");
     System.out.println();
 
-    System.out.println("Programming:");
+    System.out.println("Press Enter to continue:");
+    String enter2=input.nextLine();
+
+    System.out.print(ANSI_CLEAR+ANSI_REPOSITION);
+
+    System.out.println("Just get started on the programming test.\n"+"It ends in 5 minutes, by the way. Don't procrastinate, homie. Let's keep it chill and down to earth. \n"+"No need to stress – we got this!");
+    System.out.println();
     int electiveScore = askQuestions(electiveQ, electiveA, numberOfQuestions);
     double electivePercentage = calculatePercentageScore(electiveScore, numberOfQuestions, "Programming");
     System.out.println("You have scored a total of "+electivePercentage+"% in Programming");
     System.out.println();
-
+    System.out.print(ANSI_CLEAR+ANSI_REPOSITION);
     // receieve the total gpa with all scores and credits added up together
     //Completely changed the GPA system cause my method wasnt working correctly
     double mathgpa=calculateGPA(mathScore, numberOfQuestions, "math");
@@ -81,7 +143,50 @@ public class final{
       System.out.println("YOU WON AND GOT YOURSELF A DIPLOMA!!!!");
       }
       System.out.println("Game Over");
+      } else if(myInt==2){
+      System.out.print(ANSI_CLEAR+ANSI_REPOSITION);
+      System.out.println("- Please answer the following questions thoroughly.\n"+"- Pay attention to spelling and capitalization, as they are crucial for correct answers.\n"+"- For questions that require a numerical response, provide only the number.\n" +"- When answering with a name, include both the first and last names, unless the question specifies otherwise.\n"+"- For example, in the case of Oppenheimer, abbreviate the first name and capitalize both the middle and last names.\n"+ "- Always capitalize the first word of your answer, and make sure to include spaces where necessary.\n"+"= These questions are meticulous, so accuracy is key.");
+      System.out.println("Would youlike to contine? Press[1] to play game, Press[3] to quit");
+      while (true) {
+          int userInput = input.nextInt();
+
+          if (userInput == 1 || userInput == 3) {
+              if (userInput == 1) {
+                  // Start the game
+              } else if (userInput == 3) {
+                  System.exit(0);
+              }
+              break;
+          } else {
+              System.out.println("Invalid input. Please enter 1 or 3.");
+          }
+        }
+    } else if(myInt==3){
+     System.exit(0);
+   } else {
+       System.out.print(ANSI_CLEAR+ANSI_REPOSITION);
+       System.out.println("Oh no, you seem to not know how to follow simple instructions. Please enter the following: Press[1] to play, Press[2] for instructions, press[3] to quit");
+
+       // Keep prompting until a valid input is provided
+       while (true) {
+           int userInput = input.nextInt();
+
+           if (userInput == 1 || userInput == 2 || userInput == 3) {
+               if (userInput == 1) {
+                   // Start the game
+               } else if (userInput == 2) {
+                   // Display instructions
+               } else if (userInput == 3) {
+                   System.exit(0);
+               }
+               break;
+           } else {
+               System.out.println("Invalid input. Please enter 1, 2, or 3.");
+           }
+    }
+
   }
+}
 
   // Creating a method soley to incorpate and ask questions and allow user to answer questions.
   static int askQuestions(String[] questions, String[] answers, int numberOfQuestions){
