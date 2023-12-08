@@ -4,7 +4,7 @@
 // Team Member 3:Sebastian Garcia
 
 import java.util.Scanner;
-public class final{
+public class AwesomestGame{
   static final String ANSI_CLEAR="\u001B[2J";
   static final String ANSI_REPOSITION="\u001B[H";
   static final String ANSI_RESET="\u001B[0m";
@@ -148,47 +148,47 @@ public class final{
       System.out.println("YOU WON AND GOT YOURSELF A DIPLOMA!!!!");
       }
       System.out.println("Game Over");
-      } else if(myInt==2){
-      System.out.print(ANSI_CLEAR+ANSI_REPOSITION);
-      System.out.println("- Please answer the following questions thoroughly.\n"+"- Pay attention to spelling and capitalization, as they are crucial for correct answers.\n"+"- For questions that require a numerical response, provide only the number.\n" +"- When answering with a name, include both the first and last names, unless the question specifies otherwise.\n"+"- For example, in the case of Oppenheimer, abbreviate the first name and capitalize both the middle and last names.\n"+ "- Always capitalize the first word of your answer, and make sure to include spaces where necessary.\n"+"= These questions are meticulous, so accuracy is key.");
-      System.out.println("Would youlike to contine? Press[1] to play game, Press[3] to quit");
-      while (true) {
-          int userInput = input.nextInt();
+  }else if(myInt==2){
+  System.out.print(ANSI_CLEAR+ANSI_REPOSITION);
+  System.out.println("- Please answer the following questions thoroughly.\n"+"- Pay attention to spelling and capitalization, as they are crucial for correct answers.\n"+"- For questions that require a numerical response, provide only the number.\n" +"- When answering with a name, include both the first and last names, unless the question specifies otherwise.\n"+"- For example, in the case of Oppenheimer, abbreviate the first name and capitalize both the middle and last names.\n"+ "- Always capitalize the first word of your answer, and make sure to include spaces where necessary.\n"+"= These questions are meticulous, so accuracy is key.");
+  System.out.println("Would youlike to contine? Press[1] to play game, Press[3] to quit");
+  while (true) {
+      int userInput = input.nextInt();
 
-          if (userInput == 1 || userInput == 3) {
-              if (userInput == 1) {
-                  // Start the game
-              } else if (userInput == 3) {
-                  System.exit(0);
-              }
-              break;
-          } else {
-              System.out.println("Invalid input. Please enter 1 or 3.");
+      if (userInput == 1 || userInput == 3) {
+          if (userInput == 1) {
+              // Start the game
+          } else if (userInput == 3) {
+              System.exit(0);
           }
-        }
-    } else if(myInt==3){
-     System.exit(0);
-   } else {
-       System.out.print(ANSI_CLEAR+ANSI_REPOSITION);
-       System.out.println("Oh no, you seem to not know how to follow simple instructions. Please enter the following: Press[1] to play, Press[2] for instructions, press[3] to quit");
-
-       // Keep prompting until a valid input is provided
-       while (true) {
-           int userInput = input.nextInt();
-
-           if (userInput == 1 || userInput == 2 || userInput == 3) {
-               if (userInput == 1) {
-                   // Start the game
-               } else if (userInput == 2) {
-                   // Display instructions
-               } else if (userInput == 3) {
-                   System.exit(0);
-               }
-               break;
-           } else {
-               System.out.println("Invalid input. Please enter 1, 2, or 3.");
-           }
+          break;
+      } else {
+          System.out.println("Invalid input. Please enter 1 or 3.");
+      }
     }
+} else if(myInt==3){
+ System.exit(0);
+} else {
+   System.out.print(ANSI_CLEAR+ANSI_REPOSITION);
+   System.out.println("Oh no, you seem to not know how to follow simple instructions. Please enter the following: Press[1] to play, Press[2] for instructions, press[3] to quit");
+
+   // Keep prompting until a valid input is provided
+   while (true) {
+       int userInput = input.nextInt();
+
+       if (userInput == 1 || userInput == 2 || userInput == 3) {
+           if (userInput == 1) {
+               // Start the game
+           } else if (userInput == 2) {
+               // Display instructions
+           } else if (userInput == 3) {
+               System.exit(0);
+           }
+           break;
+       } else {
+           System.out.println("Invalid input. Please enter 1, 2, or 3.");
+       }
+}
 
   }
 }
