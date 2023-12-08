@@ -1,3 +1,8 @@
+//Try To Escape Highschool, from Team 1
+// Team Member 1:Siggifreddo Aguilar
+// Team Member 2:Chiemela Eziechelle - Nwoke
+// Team Member 3:Sebastian Garcia
+
 import java.util.Scanner;
 public class final{
   static final String ANSI_CLEAR="\u001B[2J";
