@@ -16,21 +16,21 @@ public class opening {
 
 
     if (instructionsanswer==0) {
-
+      // Code to return to main menu
     }
 
     else if (answer==3) {
       System.out.println("We don't give help over here! Begone!");
-
+      // Code to return to main menu
     }
 
     else if (answer==1) {
-
+      // Code to start playing
     }
 
     else {
       System.out.println("Please enter a valid input");
-      
+
     }
   }
 
